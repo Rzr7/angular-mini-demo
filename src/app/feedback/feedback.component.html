@@ -1,0 +1,25 @@
+<div class="feedback-layout">
+  <mat-card>
+    <mat-card-title>Feedback</mat-card-title>
+    <mat-card-content>
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput required [formControl]="name">
+          <mat-error *ngIf="name.invalid">{{getErrorMessage('name')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>E-Mail</mat-label>
+          <input matInput required [formControl]="email">
+          <mat-error *ngIf="email.invalid">{{getErrorMessage('email')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Content</mat-label>
+          <textarea matInput required [formControl]="content"></textarea>
+          <mat-error *ngIf="content.invalid">{{getErrorMessage('content')}}</mat-error>
+        </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="onSubmit()">Send</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
